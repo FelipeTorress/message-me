@@ -1,0 +1,2 @@
+gera o model e a migrate no db
+- rails generate model Message
