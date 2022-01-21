@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     if ! logged_in?
-      flash[:notece] = "Você tem que estar logado para fazer isso"
+      flash[:error] = "Você tem que estar logado para fazer isso"
       redirect_to login_path 
     end
   end
