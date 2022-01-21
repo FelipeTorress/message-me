@@ -1,2 +1,4 @@
 gera o model e a migrate no db
 - rails generate model Message
+gera o controller, helper,scss,.coffe do messages e coloca create no controller e em view
+rails generate controller messages create
