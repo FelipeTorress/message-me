@@ -1,25 +1,27 @@
 <div class="ui small inverted menu">
 
   <div class="ui container">
-    <a class="item">
-        BatePapo
-    </a>
-    <a class="item">
-        Mensagens
-    </a>
+    <%= link_to 'BatePapo', root_path, class: "item" %>
+    <%= link_to 'Mensagens', root_path, class: "item" %>
 
     <div class="right menu">
       <div class="ui dropdown item">
-        Opções <i class="dropdown icon"></i>
+        Conta <i class="dropdown icon"></i>
         <div class="menu">
-          <a class="item">Sair</a>
-          <a class="item">Logar</a>
-          <a class="item">Criar Conta</a>
+          <% if logged_in? %>
+            <%= link_to 'Sair', logout_path, method: :delete, class: "item"%>
+          <% else %>
+            <%= link_to 'Fazer Login', login_path, class: "item"%>
+          <% end %>
         </div>
       </div>
-      <div class="item">
-        <div class="ui primary button">Sign Up</div>
-      </div>
+
+      <% if !logged_in? %>
+        <div class="item">
+          <%= link_to 'Fazer Login', login_path, class: "ui red button" %>
+        </div>
+      <% end %>
+
     </div>
 
   </div>
